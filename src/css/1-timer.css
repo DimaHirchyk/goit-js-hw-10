@@ -1,0 +1,74 @@
+body {
+  padding: 36px 156px;
+  font-family: 'Montserrat';
+  color: #2e2f42;
+}
+
+#datetime-picker {
+  padding: 0 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  margin: 0 8px 32px 0;
+}
+
+#datetime-picker:hover {
+  border: 1px solid #000;
+}
+
+#datetime-picker:focus {
+  outline: none;
+  border-color: #4d5ae5;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  background-color: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  transition: 250ms;
+}
+button:hover {
+  background-color: #6c8cff;
+}
+
+button:disabled {
+  background-color: #cfcfcf;
+  color: #989898;
+  cursor: not-allowed;
+}
+
+.timer {
+  width: 346px;
+  height: 72px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.value {
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+.label {
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
