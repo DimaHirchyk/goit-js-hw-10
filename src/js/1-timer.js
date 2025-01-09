@@ -43,11 +43,15 @@ const timer = {
 
   start() {
     if (!userSelectedDate) return;
-    console.log('Таймер запущено!');
 
     this.intervalId = setInterval(() => {
       const currentTime = new Date();
       const timeLeft = userSelectedDate - currentTime;
+
+      if (timeLeft <= 0) {
+        this.stop();
+        return;
+      }
 
       const timeComponentps = this.displayTimeLeft(timeLeft);
 
@@ -56,12 +60,6 @@ const timer = {
       this.elements.minutes.textContent = this.pad(timeComponentps.minutes);
       this.elements.seconds.textContent = this.pad(timeComponentps.seconds);
 
-      if (timeLeft <= 0) {
-        this.stop();
-        console.log('Час завершився!');
-        return;
-      }
-
       this.displayTimeLeft(timeLeft);
     }, 1000);
   },
@@ -69,7 +67,6 @@ const timer = {
   stop() {
     clearInterval(this.intervalId);
     this.intervalId = null;
-    console.log('Таймер зупинено!');
   },
 
   displayTimeLeft(timeLeft) {
