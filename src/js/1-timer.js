@@ -44,6 +44,8 @@ const timer = {
   start() {
     if (!userSelectedDate) return;
 
+    btnStart.disabled = true;
+
     this.intervalId = setInterval(() => {
       const currentTime = new Date();
       const timeLeft = userSelectedDate - currentTime;
@@ -75,13 +77,9 @@ const timer = {
     const hour = minute * 60;
     const day = hour * 24;
 
-    // Remaining days
     const days = Math.floor(timeLeft / day);
-    // Remaining hours
     const hours = Math.floor((timeLeft % day) / hour);
-    // Remaining minutes
     const minutes = Math.floor(((timeLeft % day) % hour) / minute);
-    // Remaining seconds
     const seconds = Math.floor((((timeLeft % day) % hour) % minute) / second);
 
     return { days, hours, minutes, seconds };
