@@ -42,9 +42,11 @@ const timer = {
   },
 
   start() {
+    const dateTimePicker = document.querySelector('#datetime-picker');
     if (!userSelectedDate) return;
 
     btnStart.disabled = true;
+    dateTimePicker.disabled = true;
 
     this.intervalId = setInterval(() => {
       const currentTime = new Date();
